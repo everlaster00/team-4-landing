@@ -1,15 +1,21 @@
+// 코드 주석은 음슴체로 작성한다.
+
 function createTypingEffect(elementId, text, options = {}) {
+    // 타이핑 효과를 넣을 요소와 텍스트를 받음
     const typingTextElement = document.getElementById(elementId);
     let textIndex = 0;
     let jamoIndex = 0;
-    let completedText = ''; // 완성된 글자들을 저장할 변수
+    let completedText = '';
     let currentJamo = [];
 
+    // 옵션값 기본 설정
     const typingSpeed = options.typingSpeed || 100;
     const delayBeforeBurn = options.delayBeforeBurn || 1500;
     const burnAnimationDuration = options.burnAnimationDuration || 2000;
+    // 반복 옵션 추가
+    const loop = options.loop || false;
 
-    // 초성, 중성, 종성 분리 함수 (한글 아니면 null)
+    // 초성, 중성, 종성 분리 함수
     function getJamo(char) {
         const uni = char.charCodeAt(0);
         if (uni < 0xac00 || uni > 0xd7a3) {
@@ -46,6 +52,9 @@ function createTypingEffect(elementId, text, options = {}) {
         const charCode = 0xac00 + initialIndex * 21 * 28 + vowelIndex * 28 + finalIndex;
         return String.fromCharCode(charCode);
     }
+    
+    // 타이핑 효과 시작 전에 요소 다시 보이게 하기
+    typingTextElement.style.display = 'block';
 
     // 타이핑 효과를 구현하는 메인 함수
     function typeWriter() {
@@ -53,9 +62,9 @@ function createTypingEffect(elementId, text, options = {}) {
             const currentCharacter = text[textIndex];
             const jamo = getJamo(currentCharacter);
 
-            let typingProgress = ''; // 현재 타이핑 중인 글자
+            let typingProgress = '';
 
-            if (jamo) { // 현재 글자가 한글일 경우
+            if (jamo) {
                 if (jamoIndex === 0) {
                     currentJamo = jamo;
                 }
@@ -77,7 +86,7 @@ function createTypingEffect(elementId, text, options = {}) {
                     jamoIndex = 0;
                 }
 
-            } else { // 한글이 아닐 경우 (띄어쓰기, 영어, 특수문자, \n 등)
+            } else {
                 if (currentCharacter === '\n') {
                     completedText += '<br>';
                 } else {
@@ -94,21 +103,31 @@ function createTypingEffect(elementId, text, options = {}) {
             // 모든 글자가 다 나왔을 때 소멸 효과 시작
             setTimeout(() => {
                 typingTextElement.classList.add('fade-out-burn');
-                setTimeout(() => {
-                    const container = document.getElementById('typing-container');
-                    if (container) container.style.display = 'none';
-                }, burnAnimationDuration);
+                // 반복 옵션이 켜져있을 때만 다시 시작
+                if (loop) {
+                    setTimeout(() => {
+                        // 초기화
+                        typingTextElement.innerHTML = '';
+                        typingTextElement.classList.remove('fade-out-burn');
+                        // 다시 시작
+                        createTypingEffect(elementId, text, options)();
+                    }, burnAnimationDuration);
+                }
             }, delayBeforeBurn);
         }
     }
+
     return typeWriter;
 }
 
 // 사용 방법
 const igniteText = "당신의 상상력이 현실이 되는 가장 빠른 길, 프롬프트 마켓에서 만나보세요.✨";
+
 const myTypingEffect = createTypingEffect("typing-text", igniteText, {
     typingSpeed: 40,
     delayBeforeBurn: 1500,
-    burnAnimationDuration: 2000
+    burnAnimationDuration: 2000,
+    loop: true // 이 옵션을 추가
 });
+
 myTypingEffect();

@@ -37,12 +37,12 @@
     }
     50% {
         opacity: 0.7;
-        transform: translateY(-20px) scale(1.05); /* 살짝 위로 올라가며 커짐 */
+        transform: translateY(-15px) scale(1.05); /* 살짝 위로 올라가며 커짐 */
         filter: blur(3px); /* 흐려지기 */
     }
     100% {
         opacity: 0;
-        transform: translateY(-50px) scale(1.1); /* 더 위로 올라가며 사라짐 */
+        transform: translateY(-30px) scale(1.5); /* 더 위로 올라가며 사라짐 */
         filter: blur(10px); /* 아주 많이 흐려짐 */
         display: none; /* 완전히 사라진 후 요소 제거 */
     }
