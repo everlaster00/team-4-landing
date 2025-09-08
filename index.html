@@ -163,6 +163,51 @@
     </div>
 </section>
 
+    <!--Day3. Step 1: 이미지 캐러셀 추가하기-->
+    <section id="main-visual">
+        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- 인디케이터 -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+            </div>
+    
+            <!-- 슬라이드 아이템 -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/Crousel1.png" class="d-block mx-auto img-fluid" alt="슬라이드1" style="max-height:500px; object-fit:cover;">
+                    <div class="carousel-caption">
+                        <!-- <h1 class="display-4 fw-bold">개발자들의 아지트</h1>
+                        <p class="lead">24시간 열려있는 코딩 전용 카페</p> -->
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/Crousel2.png" class="d-block mx-auto img-fluid" alt="슬라이드2" style="max-height:500px; object-fit:cover;">
+                    <div class="carousel-caption">
+                        <!-- <h1 class="display-4 fw-bold">최고의 개발 환경</h1>
+                        <p class="lead">대형 모니터와 편안한 의자</p> -->
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/Crousel3.png" class="d-block mx-auto img-fluid" alt="슬라이드3" style="max-height:500px; object-fit:cover;">
+                    <div class="carousel-caption">
+                        <!-- <h1 class="display-4 fw-bold">프리미엄 커피</h1>
+                        <p class="lead">코딩에 집중할 수 있는 특별한 블렌드</p> -->
+                    </div>
+                </div>
+            </div>
+    
+            <!-- 컨트롤 버튼 -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
     <!-- 5. 푸터 영역 (부팀장) -->
     <!-- 이그나이트 회사 정보 -->
     <footer id="footer">         <!-- 상단 메뉴바에서 ID로 검색하고 있습니다. -->
@@ -181,50 +226,7 @@
         </div>
     </footer>
 
-    <!--Day3. Step 1: 이미지 캐러셀 추가하기-->
-    <section id="main-visual">
-        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
-            <!-- 인디케이터 -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
-            </div>
     
-            <!-- 슬라이드 아이템 -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="<https://placehold.co/1920x600/2E86AB/ffffff?text=Slide+1>" class="d-block w-100" alt="슬라이드1">
-                    <div class="carousel-caption">
-                        <h1 class="display-4 fw-bold">개발자들의 아지트</h1>
-                        <p class="lead">24시간 열려있는 코딩 전용 카페</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="<https://placehold.co/1920x600/F24236/ffffff?text=Slide+2>" class="d-block w-100" alt="슬라이드2">
-                    <div class="carousel-caption">
-                        <h1 class="display-4 fw-bold">최고의 개발 환경</h1>
-                        <p class="lead">대형 모니터와 편안한 의자</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="<https://placehold.co/1920x600/333333/ffffff?text=Slide+3>" class="d-block w-100" alt="슬라이드3">
-                    <div class="carousel-caption">
-                        <h1 class="display-4 fw-bold">프리미엄 커피</h1>
-                        <p class="lead">코딩에 집중할 수 있는 특별한 블렌드</p>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- 컨트롤 버튼 -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
-        </div>
-    </section>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
