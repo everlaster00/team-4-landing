@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업 모달</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .modal {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s linear;
+        }
+        .modal.open {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+<!-- Button to open the modal -->
+<button id="openModalBtn" class="px-6 py-3 bg-indigo-600 text-white rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300">
+    팝업 열기
+</button>
+
+<!-- The Modal -->
+<div id="modal" class="modal fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50">
+    <div class="modal-content bg-white rounded-xl shadow-2xl p-8 w-full max-w-md mx-4 transform scale-95 transition-transform duration-300">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-2xl font-bold text-gray-800">새로운 공지사항</h2>
+            <button id="closeModalBtn" class="text-gray-400 hover:text-gray-600 text-3xl leading-none font-bold">&times;</button>
+        </div>
+        <p class="text-gray-600 mb-6">
+            안녕하세요! 새로운 이벤트 소식과 업데이트 사항을 확인하세요. 더 나은 서비스를 위해 항상 노력하고 있습니다.
+        </p>
+        <div class="flex justify-end">
+            <button class="px-5 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition duration-300">
+                자세히 보기
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('modal');
+        const openModalBtn = document.getElementById('openModalBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        openModalBtn.addEventListener('click', () => {
+            modal.classList.add('open');
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.remove('open');
+        });
+
+        // Close the modal when clicking outside of the modal content
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.classList.remove('open');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
