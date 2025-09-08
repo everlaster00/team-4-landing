@@ -1,3 +1,12 @@
 a {
     text-decoration-line: none;
 }
+/* 5. 카드 호버 효과 */
+.card {
+    transition: transform 0.3s;
+    border: none;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
