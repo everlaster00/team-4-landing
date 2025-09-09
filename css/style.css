@@ -1,0 +1,102 @@
+a {
+    text-decoration-line: none;
+}
+
+/* 1. 기본 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. 네비게이션 바 스타일 */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-link {
+    font-weight: bold;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: rgba(0, 0, 0,0.1);
+    color: #2E86AB !important;
+}
+
+/* 3. 섹션 패딩 */
+section {
+    padding: 7px 0;
+}
+
+/* 4. 캐러셀 스타일 */
+.carousel-item {
+    height: 600px;
+}
+
+/* 5. 카드 호버 효과 */
+.card {
+    transition: transform 0.3s;
+    border: none;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+
+/* 6. 버튼 스타일 */
+.btn-primary {
+    background-color: #2E86AB;
+    border-color: #2E86AB;
+    padding: 12px 30px;
+}
+
+.btn-primary:hover {
+    background-color: #1e5a7a;
+    border-color: #1e5a7a;
+}
+
+/* 7. 푸터 스타일 */
+footer {
+    background-color: #333333;
+}
+
+footer a:hover {
+    opacity: 0.8;
+}
+
+/* 8. 제목 스타일 */
+h1, h2, h3, h4, h5 {
+    color: #333333;
+}
+
+#footer h5 {
+    color: #d79914;
+    text-shadow: 2px 2px 0px rgba(255, 69, 0, 0.7), 0 0 20px rgba(255, 140, 0, 0.5);
+}
+
+.display-4 {
+    font-weight: 700;
+}
+
+/* 9. 모바일 반응형 */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .carousel-item {
+        height: 400px;
+    }
+}
