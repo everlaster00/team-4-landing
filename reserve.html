@@ -39,15 +39,13 @@
   </footer>
 
   <script>
-    // 현재 연도 자동 표시
     const year = document.getElementById('currentYear');
     if (year) {
       year.textContent = new Date().getFullYear();
     }
 
-    // 폼 제출 시 알림창 띄우기
     document.querySelector("form").addEventListener("submit", function(e) {
-      e.preventDefault(); // 실제 전송 방지
+      e.preventDefault(); 
       alert("예약이 완료되었습니다!");
     });
   </script>

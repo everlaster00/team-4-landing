@@ -2,14 +2,12 @@ a {
     text-decoration-line: none;
 }
 
-/* 1. 기본 설정 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* 2. 네비게이션 바 스타일 */
 .navbar {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -30,17 +28,14 @@ a {
     color: #2E86AB !important;
 }
 
-/* 3. 섹션 패딩 */
 section {
     padding: 7px 0;
 }
 
-/* 4. 캐러셀 스타일 */
 .carousel-item {
     height: 600px;
 }
 
-/* 5. 카드 호버 효과 */
 .card {
     transition: transform 0.3s;
     border: none;
@@ -51,7 +46,6 @@ section {
 }
 
 
-/* 6. 버튼 스타일 */
 .btn-primary {
     background-color: #2E86AB;
     border-color: #2E86AB;
@@ -63,7 +57,6 @@ section {
     border-color: #1e5a7a;
 }
 
-/* 7. 푸터 스타일 */
 footer {
     background-color: #333333;
 }
@@ -72,7 +65,6 @@ footer a:hover {
     opacity: 0.8;
 }
 
-/* 8. 제목 스타일 */
 h1, h2, h3, h4, h5 {
     color: #333333;
 }
@@ -86,7 +78,6 @@ h1, h2, h3, h4, h5 {
     font-weight: 700;
 }
 
-/* 9. 모바일 반응형 */
 @media (max-width: 768px) {
     .display-4 {
         font-size: 2.5rem;
